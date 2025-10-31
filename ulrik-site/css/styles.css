@@ -1,0 +1,293 @@
+@charset "UTF-8";
+
+body {
+  background: #c0c0c0; /* classic Windows gray */
+  font-family: "MS Sans Serif", "Segoe UI", sans-serif;
+  color: #000;
+  margin: 0;
+  padding: 20px;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: red;
+}
+
+.layout {
+  display: flex;
+  flex-wrap: wrap; /* ← позволяет контенту переноситься */
+  gap: 20px;
+  min-height: 100vh;
+}
+
+#sidebar-wrapper {
+  flex: 0 0 15rem; /* фиксированная ширина, не растягивается */
+  min-width: 200px;
+  height: auto;
+  padding: 0;
+  background-color: #d4d0c8;
+  border-right: 2px solid #808080;
+  box-shadow: inset -1px 0 0 #ffffff;
+  display: flex;
+  flex-direction: column;
+  color: #000;
+}
+
+.sidebar-heading {
+  padding: 0.875rem 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  background: linear-gradient(180deg, #000080 0%, #000060 100%);
+  color: #ffffff;
+  border-bottom: 2px solid #808080;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.sidebar-link {
+  padding: 0.875rem 1.5rem;
+  color: #000;
+  background: transparent;
+  text-decoration: none;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.sidebar-link + .sidebar-link {
+  border-top: 1px solid #ffffff;
+  box-shadow: 0 -1px 0 #808080 inset;
+}
+
+.sidebar-link:hover,
+.sidebar-link:focus {
+  background-color: #000080;
+  color: #ffffff;
+}
+
+#page-content-wrapper {
+  flex: 1;
+  min-width: 300px;
+  box-sizing: border-box;
+  padding: 2px;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #d4d0c8;
+  border-bottom: 2px solid #808080;
+  box-shadow: inset 0 -1px 0 #ffffff;
+}
+
+.top-nav-link {
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 0;
+}
+
+.top-nav-link:hover,
+.top-nav-link:focus {
+  color: #000080;
+  border-color: #808080;
+  background-color: #ffffff;
+}
+
+.top-nav-link.is-active {
+  font-weight: 700;
+  color: #000080;
+  border-color: #808080;
+  background-color: #ffffff;
+}
+
+.top-nav-dropdown {
+  position: relative;
+}
+
+.top-nav-dropdown summary {
+  list-style: none;
+  cursor: pointer;
+  color: #000;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid transparent;
+}
+
+.top-nav-dropdown summary::marker {
+  display: none;
+}
+
+.top-nav-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.top-nav-dropdown[open] summary {
+  color: #000080;
+  border-color: #808080;
+  background-color: #ffffff;
+}
+
+.top-nav-dropdown .dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #f0f0f0;
+  border: 2px solid #808080;
+  box-shadow: 2px 2px 0 #000000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 12rem;
+  z-index: 2;
+}
+
+.top-nav-dropdown .dropdown-content a {
+  color: #000;
+  text-decoration: none;
+}
+
+.top-nav-dropdown .dropdown-content a:hover,
+.top-nav-dropdown .dropdown-content a:focus {
+  color: #000080;
+}
+
+
+.tab-window {
+  margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.tab-window .window-body {
+  padding: 8px;
+}
+
+.tab-menu {
+  display: flex;
+  gap: 6px;
+  padding: 0;
+  margin: 0;
+  background: transparent; /* Явно указываем прозрачный фон, чтобы перекрыть silver из .window */
+}
+
+.tab-menu li {
+  list-style: none;
+}
+
+.tab-menu a {
+  display: inline-block;
+  padding: 4px 12px 5px;
+  color: #000;
+  text-decoration: none;
+  border: 1px solid #808080;
+  border-bottom: none;
+  background: linear-gradient(180deg, #ffffff 0%, #d4d0c8 100%);
+  box-shadow: inset 1px 1px 0 #ffffff;
+}
+
+.tab-menu li[aria-selected="true"] a {
+  background: #ffffff;
+  color: #000080;
+}
+
+.tab-panel {
+  margin-top: -1px;
+  border: 1px solid #808080;
+  background-color: #ffffff;
+  padding: 12px;
+  box-shadow: inset 1px 1px 0 #ffffff;
+}
+
+.content-container {
+  margin-left: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.post-window {
+  max-width: 900px;
+  width: 100%;
+  margin: 40px auto;
+  box-sizing: border-box;
+}
+
+.post-window .window-body {
+  padding: 3px 12px 12px;
+  word-wrap: break-word;
+}
+
+.window-body {
+  padding: 12px;
+  word-wrap: break-word;
+}
+
+/* Wrapper that keeps tabs and the outer window aligned when the page resizes */
+.main-feed-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.main-feed-wrap > menu[role="tablist"] {
+  margin-left: 8px; /* nudge tabs to align with the window's inner border */
+  margin-top: 8px;
+}
+
+/* Очищаем лишние стили - теперь меню внутри .window-body */
+
+/* ensure tab panels align with windows */
+.window[role="tabpanel"] {
+  margin-top: -1px;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  #sidebar-wrapper {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid #808080;
+  }
+
+
+  .top-nav {
+    flex-wrap: wrap;
+  }
+
+  .content-container {
+    margin-left: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

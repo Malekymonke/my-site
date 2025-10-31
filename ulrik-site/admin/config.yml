@@ -1,0 +1,26 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "content"
+    label: "Site content"
+    files:
+      - label: "Artwork"
+        name: "artwork"
+        file: "content/artwork.html"
+        fields:
+          - { label: "Body", name: "body", widget: "text" }
+      - label: "Essays"
+        name: "essays"
+        file: "content/essays.html"
+        fields:
+          - { label: "Body", name: "body", widget: "text" }
+      - label: "Rustfiends"
+        name: "rustfiends"
+        file: "content/rustfiends.html"
+        fields:
+          - { label: "Body", name: "body", widget: "text" }
