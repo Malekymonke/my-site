@@ -13,7 +13,7 @@ collections:
         name: "artwork"
         file: "content/artwork.html"
         fields:
-          - { label: "Body", name: "body", widget: "text" }
+          - { label: "Body", name: "body", widget: "markdown" }
       - label: "Essays"
         name: "essays"
         file: "content/essays.html"
